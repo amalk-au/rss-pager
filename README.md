@@ -26,9 +26,9 @@ No frameworks. No dependencies. No build process.
 
 RSS Pager is a static web application. You can run it locally or deploy it to any static hosting service, including GitHub Pages.
 
-### Preview Locally
+### Preview
 
-With **Node.js 22 or newer** installed, run:
+[Click here for Live Demo](https://amalk.au/rss-pager/) or to run locally With **Node.js 22 or newer** installed, run:
 
 ```bash
 pnpm start
