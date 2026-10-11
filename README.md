@@ -115,14 +115,14 @@ Everything is managed directly through the pager interface.
 
 Navigate through incoming feed entries using the pager controls.
 
-| Action | Control |
-|--------|---------|
-| Previous message | Left button / Left arrow |
-| Next message | Right button / Right arrow |
-| Previous page | Up button / Up arrow |
-| Next page | Down button / Down arrow |
-| Continue reading | Round button |
-| Scroll through content | Mouse wheel over LCD |
+| Action                 | Control                    |
+| ---------------------- | -------------------------- |
+| Previous message       | Left button / Left arrow   |
+| Next message           | Right button / Right arrow |
+| Previous page          | Up button / Up arrow       |
+| Next page              | Down button / Down arrow   |
+| Continue reading       | Round button               |
+| Scroll through content | Mouse wheel over LCD       |
 
 The round button advances to the next page or, when the current message ends, the next message.
 
@@ -224,12 +224,12 @@ Previously saved messages remain available when a refresh fails.
 
 **Request limits:**
 
-| Limit | Value |
-|-------|-------|
-| Relay fallback delay | 1.2 seconds |
-| Overall request timeout | 15 seconds |
-| Maximum feed response | 3 MB |
-| Default relay free-tier limit | 1 MiB |
+| Limit                         | Value       |
+| ----------------------------- | ----------- |
+| Relay fallback delay          | 1.2 seconds |
+| Overall request timeout       | 15 seconds  |
+| Maximum feed response         | 3 MB        |
+| Default relay free-tier limit | 1 MiB       |
 
 The relay service may impose additional restrictions independently of RSS Pager.
 
@@ -249,11 +249,11 @@ This includes:
 
 To keep local storage manageable, the application enforces the following limits:
 
-| Setting | Limit |
-|---------|-------|
-| Total saved messages | 500 |
-| Entries imported per feed refresh | 50 |
-| Maximum body text per entry | 14,000 characters |
+| Setting                           | Limit             |
+| --------------------------------- | ----------------- |
+| Total saved messages              | 500               |
+| Entries imported per feed refresh | 50                |
+| Maximum body text per entry       | 14,000 characters |
 
 Refreshing a feed preserves existing message history within these limits.
 
@@ -291,17 +291,17 @@ Avoid modifying storage keys or migration logic without accounting for previousl
 
 The application is organized into a small number of source files.
 
-| File | Description |
-|------|-------------|
-| `index.html` | Application layout, pager screen, labels, help content, and settings fields. |
-| `styles.css` | Pager appearance, LCD styling, typography, colors, and responsive layouts. |
-| `pager.js` | Application state, rendering, navigation, events, local storage, and refresh scheduling. |
-| `feed.js` | Feed presets, demo messages, RSS/Atom parsing, text formatting, URL validation, and notification audio. |
-| `transport.js` | Network requests, relay configuration, fallback behaviour, timeouts, and legacy relay migration. |
-| `scripts/serve.mjs` | Optional development HTTP server. |
-| `tests/feed.test.mjs` | Automated regression tests for feed validation, transport, encoding, timeouts, and pagination. |
-| `package.json` | Development shortcuts for previewing and testing the application. |
-| `.nojekyll` | Disables Jekyll processing on GitHub Pages. |
+| File                  | Description                                                                                             |
+| --------------------- | ------------------------------------------------------------------------------------------------------- |
+| `index.html`          | Application layout, pager screen, labels, help content, and settings fields.                            |
+| `styles.css`          | Pager appearance, LCD styling, typography, colors, and responsive layouts.                              |
+| `pager.js`            | Application state, rendering, navigation, events, local storage, and refresh scheduling.                |
+| `feed.js`             | Feed presets, demo messages, RSS/Atom parsing, text formatting, URL validation, and notification audio. |
+| `transport.js`        | Network requests, relay configuration, fallback behaviour, timeouts, and legacy relay migration.        |
+| `scripts/serve.mjs`   | Optional development HTTP server.                                                                       |
+| `tests/feed.test.mjs` | Automated regression tests for feed validation, transport, encoding, timeouts, and pagination.          |
+| `package.json`        | Development shortcuts for previewing and testing the application.                                       |
+| `.nojekyll`           | Disables Jekyll processing on GitHub Pages.                                                             |
 
 ### Making Changes
 
@@ -378,8 +378,8 @@ The project prioritizes:
 
 ## License
 
-A license has not yet been specified.
+This project is released under the **GNU General Public License Version 3 (GPLv3)**. You are free to use, study, modify, and redistribute the contents of this repository in accordance with the terms of the license.
 
 ---
 
-**RSS Pager** — *The internet, one beep at a time.*
+**RSS Pager** — _The internet, one beep at a time._
