@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="RSS Pager — a pocket-sized RSS and Atom reader."
+    />
+    <title>RSS Pager</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./pager.js"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="signal">▂▄▆</span> RSS PAGER
+        <span class="edition">PERSONAL NEWS RECEIVER</span>
+      </header>
+      <section class="intro">
+        <span class="eyebrow">A LITTLE MORE SIGNAL</span>
+        <h1>Good news travels small.</h1>
+        <p>Your corner of the internet, one message at a time.</p>
+      </section>
+      <section class="pager" aria-label="RSS Pager">
+        <div class="case-top">
+          <strong>RSS <span>PAGER</span></strong
+          ><span id="led" class="led" aria-label="Receiver status"></span>
+        </div>
+        <!-- Buttons select the sections below via their data-view values. -->
+        <nav aria-label="Pager screens">
+          <button data-view="reader" aria-current="page">Read</button
+          ><button data-view="inbox">Inbox</button
+          ><button data-view="settings">Settings</button
+          ><button data-view="help">Help</button>
+        </nav>
+        <div class="bezel">
+          <div class="lcd">
+            <div class="status">
+              <span id="unread"></span><time id="clock"></time
+              ><span id="sound-status"></span>
+            </div>
+            <!-- pager.js fills the reader and inbox using safe textContent assignments. -->
+            <section id="reader" tabindex="0" aria-label="Message display">
+              <div id="source" class="source"></div>
+              <h2 id="title"></h2>
+              <pre id="copy" aria-live="polite" aria-atomic="true"></pre>
+              <div class="screen-footer">
+                <span id="position"></span><span id="page"></span>
+              </div>
+              <a id="story" target="_blank" rel="noopener noreferrer"
+                >Open original story ↗</a
+              >
+            </section>
+            <section id="inbox" hidden>
+              <h2>Incoming messages</h2>
+              <label for="channel">Channel</label
+              ><select id="channel"></select>
+              <div id="messages"></div>
+              <button id="show-all">Show all messages</button>
+            </section>
+            <!-- All preferences live inside the pager. Keep IDs in sync with pager.js. -->
+            <section id="settings" hidden>
+              <h2>Receiver settings</h2>
+              <form id="connect">
+                <label for="feed-url">RSS / Atom feed URL</label>
+                <div class="input-row">
+                  <input
+                    id="feed-url"
+                    type="url"
+                    required
+                    placeholder="https://example.com/feed"
+                    autocomplete="url"
+                  /><button id="connect-button">Connect</button>
+                </div>
+              </form>
+              <div id="examples" class="examples"></div>
+              <h3>Connected channels</h3>
+              <div id="feeds"></div>
+              <div class="setting">
+                <label for="sound">Pager sound</label
+                ><input id="sound" type="checkbox" role="switch" />
+              </div>
+              <div class="setting">
+                <label for="refresh-rate">Auto-refresh</label
+                ><select id="refresh-rate">
+                  <option value="off">Off</option>
+                  <option value="1">Every minute</option>
+                  <option value="5">Every 5 minutes</option>
+                  <option value="15">Every 15 minutes</option>
+                </select>
+              </div>
+              <form id="relay-form">
+                <label for="relay">CORS relay URL template</label
+                ><input
+                  id="relay"
+                  type="text"
+                  placeholder="https://relay.example/?url={url}"
+                  spellcheck="false"
+                />
+                <p class="hint">
+                  Feeds are tried directly first. If access fails or is slow,
+                  the relay receives the public feed URL. Leave blank for direct
+                  access only. Use {url} for the encoded feed address.
+                </p>
+                <button>Save relay</button>
+              </form>
+              <button id="refresh">Refresh channels ↻</button>
+            </section>
+            <section id="help" hidden>
+              <h2>Your receiver, explained.</h2>
+              <p>
+                In Settings, connect a public RSS or Atom feed, or try BBC News,
+                Hacker News, or The Register.
+              </p>
+              <p>
+                ← / → select messages. ↑ / ↓ turn pages. The round read button
+                advances a page, then a message. Scroll over the reading screen
+                to do both.
+              </p>
+              <p>
+                Open Inbox to filter by channel, select a message, or open its
+                original article. Settings contains feed removal, sound,
+                automatic refresh, and relay configuration.
+              </p>
+              <p>
+                Feeds, up to 500 messages, and preferences stay in this browser.
+                Existing saved feeds are migrated automatically on the same
+                website origin. Refresh imports up to 50 entries per feed;
+                article text is limited to 14,000 characters.
+              </p>
+              <p>
+                GitHub Pages serves static files. Publishers that block browser
+                access need a working CORS relay. Saved messages remain readable
+                when offline.
+              </p>
+            </section>
+          </div>
+        </div>
+        <div id="notice" role="status" hidden>
+          <span></span><button aria-label="Dismiss notification">×</button>
+        </div>
+        <!-- Hardware controls mirror arrow-key and wheel navigation. -->
+        <div class="controls">
+          <span class="speaker" aria-hidden="true">≡</span
+          ><button id="previous" aria-label="Previous message">←</button
+          ><button id="up" aria-label="Previous page">↑</button
+          ><button id="read" aria-label="Read next page or message">●</button
+          ><button id="down" aria-label="Next page">↓</button
+          ><button id="next" aria-label="Next message">→</button
+          ><span class="speaker" aria-hidden="true">≡</span>
+        </div>
+        <div class="case-bottom">RSS PAGER · RSS / ATOM</div>
+      </section>
+      <footer>
+        Old-school feeling. Your own frequency.<span
+          >Saved locally. No account needed.</span
+        >
+      </footer>
+    </main>
+  </body>
+</html>
