@@ -7,8 +7,8 @@ import {
   looksLikeFeed,
   wrapMessage,
   safeUrl,
-} from "../feed.js";
-import { fetchFeedXml, validateRelay } from "../transport.js";
+} from "../scripts/feed.js";
+import { fetchFeedXml, validateRelay } from "../scripts/transport.js";
 const RSS = "<rss><channel><title>News</title></channel></rss>";
 test("validates public URLs and strips fragments", () => {
   assert.equal(
@@ -206,7 +206,7 @@ test("one deadline aborts both stalled requests", async (t) => {
   assert.ok(signals.every((s) => s.aborted));
 });
 test("migrates the old default but preserves custom and disabled relays", async () => {
-  const { migrateRelay, DEFAULT_RELAY } = await import("../transport.js");
+  const { migrateRelay, DEFAULT_RELAY } = await import("../scripts/transport.js");
   assert.equal(
     migrateRelay("https://api.allorigins.win/raw?url={url}"),
     DEFAULT_RELAY,
@@ -218,7 +218,7 @@ test("migrates the old default but preserves custom and disabled relays", async 
   );
 });
 test("The Register replaces NASA in the default presets", async () => {
-  const { EXAMPLES } = await import("../feed.js");
+  const { EXAMPLES } = await import("../scripts/feed.js");
   assert.ok(
     EXAMPLES.some(
       (e) =>
