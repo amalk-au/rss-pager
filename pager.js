@@ -17,7 +17,7 @@ import {
 
 // DOM IDs match index.html; publisher text is never inserted as live HTML.
 const getElement = (id) => document.getElementById(id);
-const STORAGE_KEY = "maverick-pager-v1";
+const STORAGE_KEY = "rss-pager-v1";
 
 // Persist subscriptions, history, reading position, and preferences.
 let state = {
@@ -158,9 +158,9 @@ function renderPager() {
   getElement("led").classList.toggle("connected", state.feeds.length > 0);
   getElement("source").textContent = message
     ? message.demo
-      ? "MAVERICK / DEMO CHANNEL"
+      ? "rss / DEMO CHANNEL"
       : message.feedName
-    : "MAVERICK / WAITING FOR SIGNAL";
+    : "rss / WAITING FOR SIGNAL";
   getElement("title").textContent =
     message?.title || "Your next story starts here.";
   getElement("copy").textContent = chunks[page];
