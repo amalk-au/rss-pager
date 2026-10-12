@@ -86,14 +86,14 @@ h1 {
   font-size: 12px;
 }
 .led {
-  width: 8px;
-  height: 8px;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
-  background: #5e6553;
+  background: #ff0000;
   box-shadow: inset 0 1px 3px #000;
 }
 .led.connected {
-  background: #bbd58b;
+  background: #b1ff21;
   box-shadow: 0 0 9px #b2d788;
 }
 .led.receiving {
