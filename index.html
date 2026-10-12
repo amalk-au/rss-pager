@@ -3,28 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta
-      name="description"
-      content="RSS Pager — a pocket-sized RSS and Atom reader."
-    />
+    <meta name="description" content="RSS Pager — a pocket-sized RSS reader." />
     <title>RSS Pager</title>
     <link rel="stylesheet" href="./styles.css" />
     <script type="module" src="./scripts/pager.js" defer></script>
   </head>
   <body>
     <main>
-      <header>
-        <span class="signal">▂▄▆</span> RSS PAGER
-        <span class="edition">PERSONAL NEWS RECEIVER</span>
-      </header>
-      <section class="intro">
-        <span class="eyebrow">A LITTLE MORE SIGNAL</span>
-        <h1>Good news travels small.</h1>
-        <p>Your corner of the internet, one message at a time.</p>
-      </section>
       <section class="pager" aria-label="RSS Pager">
         <div class="case-top">
-          <strong>RSS <span>PAGER</span></strong
+          <strong
+            >▂▄▆ RSS PAGER<span> | </span
+            ><span>PERSONAL NEWS RECEIVER</span></strong
           ><span id="led" class="led" aria-label="Receiver status"></span>
         </div>
         <!-- Buttons select the sections below via their data-view values. -->
@@ -144,18 +134,23 @@
         <div class="controls">
           <span class="speaker" aria-hidden="true">≡</span
           ><button id="previous" aria-label="Previous message">←</button
-          ><button id="up" aria-label="Previous page">↑</button
-          ><button id="read" aria-label="Read next page or message">●</button
-          ><button id="down" aria-label="Next page">↓</button
-          ><button id="next" aria-label="Next message">→</button
-          ><span class="speaker" aria-hidden="true">≡</span>
+          ><button id="next" aria-label="Next message">→</button>
+          <button id="read" aria-label="Read next page or message">●</button>
+          <button id="up" aria-label="Previous page">↑</button
+          ><button id="down" aria-label="Next page">↓</button>
+          <span class="speaker" aria-hidden="true">≡</span>
         </div>
-        <div class="case-bottom">RSS PAGER · RSS / ATOM</div>
+        <div class="case-bottom">Back | Up</div>
       </section>
       <footer>
-        Old-school feeling. Your own frequency.<span
+        Old school feeling. On your own frequency.<span
           >Saved locally. No account needed.</span
         >
+        <span>
+          <a href="https://github.com/amalk-au/rss-pager" target="_blank"
+            >Source Code on Github</a
+          >
+        </span>
       </footer>
     </main>
   </body>
