@@ -162,7 +162,7 @@ function renderPager() {
       : message.feedName
     : "rss / WAITING FOR SIGNAL";
   getElement("title").textContent =
-    message?.title || "Your next story starts here.";
+    message?.title || "Your RSS Feeds appear here";
   getElement("copy").textContent = chunks[page];
   getElement("position").textContent =
     `MSG ${message ? list.indexOf(message) + 1 : 0} / ${list.length}`;
