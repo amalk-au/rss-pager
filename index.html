@@ -29,7 +29,11 @@
             <div class="status">
               <span id="unread"></span><time id="clock"></time
               ><span id="sound-status"></span>
+              <div id="notice" role="status" hidden>
+                <span></span>
+              </div>
             </div>
+
             <!-- pager.js fills the reader and inbox using safe textContent assignments. -->
             <section id="reader" tabindex="0" aria-label="Message display">
               <div id="source" class="source"></div>
@@ -127,9 +131,7 @@
             </section>
           </div>
         </div>
-        <div id="notice" role="status" hidden>
-          <span></span><button aria-label="Dismiss notification">×</button>
-        </div>
+
         <!-- Hardware controls mirror arrow-key and wheel navigation. -->
         <div class="controls">
           <span class="speaker" aria-hidden="true">≡</span
@@ -140,7 +142,7 @@
           ><button id="down" aria-label="Next page">↓</button>
           <span class="speaker" aria-hidden="true">≡</span>
         </div>
-        <div class="case-bottom">Back | Up</div>
+        <div class="case-bottom"></div>
       </section>
       <footer>
         Old school feeling. On your own frequency.<span

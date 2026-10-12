@@ -375,7 +375,7 @@ h3 {
   display: flex;
   gap: 12px;
   align-items: center;
-  color: #dee5d4;
+  color: #131511;
   font-size: 12px;
   line-height: 1.6;
   padding: 12px 5px 0;
@@ -387,7 +387,7 @@ h3 {
   background: none;
   border: 0;
   color: inherit;
-  font-size: 22px;
+  font-size: 1rem;
 }
 #notice.error {
   color: #ffd1ae;
